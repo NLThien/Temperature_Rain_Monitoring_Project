@@ -75,7 +75,7 @@ poetry.lock
 # ===================
 
 # Compiled Arduino binaries
-*.hex
+#*.hex  bỏ chứ lười convert kkk
 *.elf
 
 # Arduino IDE build folder
@@ -106,3 +106,7 @@ ehthumbs.db
 Thumbs.db
 *.tmp
 *.log
+
+## THÊM
+Proteus Backups/
+Temperature_Rain_Monitoring.pdsprj.ZEP-G.ROG.workspace
