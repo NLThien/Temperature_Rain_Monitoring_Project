@@ -28,4 +28,4 @@ In Proteus, double-click on Arduino → Program File → select the .hex file(in
 chưa làm chưa biết
 
 # Step 4: Run Python Bridge
-chịu
+chịu hello world!
