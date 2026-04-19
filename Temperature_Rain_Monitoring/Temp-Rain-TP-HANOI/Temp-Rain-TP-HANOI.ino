@@ -80,7 +80,7 @@ void loop() {
   // Gửi dữ liệu qua Serial (cho Python)
   Serial.print("LOCATION:");
   Serial.print(LOCATION);
-  Serial.print("NHIETDO:");
+  Serial.print("|NHIETDO:");
   Serial.print(currentTemp, 1);
   Serial.print("|DOAM:");
   Serial.print(currentHum, 0);
