@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121315; /* Màu nền tối nhất */
+    color: #FFFFFF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khung viền ngoài cùng giống màn hình máy tính bảng */
+.app-container {
+    background-color: #1A1C1E; 
+    width: 95%;
+    max-width: 1400px;
+    height: 90vh;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 80px;
+    background-color: #1E2024;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    border-right: 1px solid #2A2C31;
+}
+
+.menu-icon {
+    color: #6B7280;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.menu-icon:hover { color: #FFF; background-color: #2A2C31; }
+.menu-icon.active { color: #FFF; background-color: #2A2C31; }
+.menu-icon.bottom { margin-top: auto; }
+
+/* --- MAIN CONTENT --- */
+.main-content {
+    flex: 1;
+    padding: 40px 50px;
+    overflow-y: auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.greeting p { color: #9CA3AF; font-size: 0.9rem; margin-bottom: 5px; }
+.greeting h1 { font-size: 2rem; font-weight: 600; }
+
+.header-right { display: flex; align-items: center; gap: 20px; }
+
+.search-bar {
+    background-color: #24262B;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    color: #9CA3AF;
+}
+.search-bar input {
+    background: none; border: none; outline: none;
+    color: #FFF; padding-left: 10px; font-family: 'Poppins';
+}
+
+.user-profile img {
+    width: 45px; height: 45px; border-radius: 50%; object-fit: cover;
+}
+
+/* --- DASHBOARD GRID --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Weather Cards */
+.weather-card {
+    background-color: #24262B;
+    border-radius: 24px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover { transform: translateY(-5px); }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #9CA3AF;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.unit-toggle {
+    background-color: #313338;
+    padding: 5px 12px;
+    border-radius: 12px;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.main-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.weather-icon {
+    font-size: 5rem;
+    /* Hiệu ứng màu gradient nhẹ cho icon */
+    background: -webkit-linear-gradient(#f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Icon khi trời mưa sẽ có màu xanh/trắng */
+.weather-icon.rainy {
+    background: -webkit-linear-gradient(#bdc3c7, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.temp-display { text-align: right; }
+.temp-display span { font-size: 3.5rem; font-weight: 600; line-height: 1; }
+.temp-display .celsius { font-size: 1.5rem; font-weight: 400; vertical-align: top; }
+
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1E2024;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-label { color: #9CA3AF; font-size: 0.85rem; }
+.detail-label i { margin-right: 5px; }
+
+.detail-value { font-size: 1.1rem; font-weight: 500; }
+
+.status.rain { color: #3498db; }
+.status.clear { color: #f1c40f; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .app-container { flex-direction: column; height: 100vh; width: 100vw; border-radius: 0; }
+    .sidebar { width: 100%; flex-direction: row; justify-content: space-around; padding: 10px; border-right: none; border-bottom: 1px solid #2A2C31; }
+    .menu-icon { margin: 0; }
+    .header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .header-right { width: 100%; justify-content: space-between; }
+}

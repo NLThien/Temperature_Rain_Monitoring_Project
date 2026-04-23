@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="menu-icon active"><i class="fa-solid fa-border-all"></i></div>
+            <div class="menu-icon"><i class="fa-solid fa-map"></i></div>
+            <div class="menu-icon"><i class="fa-regular fa-calendar"></i></div>
+            <div class="menu-icon"><i class="fa-regular fa-bell"></i></div>
+            <div class="menu-icon"><i class="fa-solid fa-gear"></i></div>
+            <div class="menu-icon bottom"><i class="fa-regular fa-circle-question"></i></div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="greeting">
+                    <p>Hệ thống giám sát</p>
+                    <h1>Thời Tiết 3 Miền</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Tìm kiếm trạm..." disabled>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="weather-card" id="card-hanoi">
+                    <div class="card-header">
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Hà Nội, VN</div>
+                        <div class="unit-toggle">°C</div>
+                    </div>
+                    <div class="main-weather">
+                        <i class="fa-solid fa-cloud-sun weather-icon" id="hanoi-icon"></i>
+                        <div class="temp-display">
+                            <span id="hanoi-temp">--</span><span class="celsius">°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-droplet"></i> Độ ẩm</span>
+                            <span class="detail-value" id="hanoi-hum">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-cloud-rain"></i> Lượng mưa</span>
+                            <span class="detail-value status" id="hanoi-rain">Đang tải</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-card" id="card-danang">
+                    <div class="card-header">
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Đà Nẵng, VN</div>
+                        <div class="unit-toggle">°C</div>
+                    </div>
+                    <div class="main-weather">
+                        <i class="fa-solid fa-cloud-sun weather-icon" id="danang-icon"></i>
+                        <div class="temp-display">
+                            <span id="danang-temp">--</span><span class="celsius">°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-droplet"></i> Độ ẩm</span>
+                            <span class="detail-value" id="danang-hum">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-cloud-rain"></i> Lượng mưa</span>
+                            <span class="detail-value status" id="danang-rain">Đang tải</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-card" id="card-tphcm">
+                    <div class="card-header">
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> TP. Hồ Chí Minh, VN</div>
+                        <div class="unit-toggle">°C</div>
+                    </div>
+                    <div class="main-weather">
+                        <i class="fa-solid fa-cloud-sun weather-icon" id="tphcm-icon"></i>
+                        <div class="temp-display">
+                            <span id="tphcm-temp">--</span><span class="celsius">°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-droplet"></i> Độ ẩm</span>
+                            <span class="detail-value" id="tphcm-hum">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i class="fa-solid fa-cloud-rain"></i> Lượng mưa</span>
+                            <span class="detail-value status" id="tphcm-rain">Đang tải</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
