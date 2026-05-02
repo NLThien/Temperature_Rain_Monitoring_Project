@@ -14,7 +14,7 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 // Hằng số khu vực
 const String LOCATION = "HANOI";
 // Biến lưu trạng thái hiện tại
-float currentTemp = 35.0;   // nhiệt độ hiện tại (độ C)
+float currentTemp = 29.0;   // nhiệt độ hiện tại (độ C)
 float currentHum = 65.0;    // độ ẩm hiện tại (%)
 int currentRain = 0;        // 0: không mưa, 1: có mưa
 
@@ -24,7 +24,7 @@ void setup() {
   pinMode(RAINPIN, INPUT_PULLUP);
   randomSeed(analogRead(A5));     // Khởi tạo bộ sinh số ngẫu nhiên
   // Khởi tạo giá trị ngẫu nhiên ban đầu trong khoảng thực tế
-  currentTemp = random(180, 430) / 10.0;   // 18.0 - 43.0
+  currentTemp = random(290, 450) / 10.0;   // 29.0 - 45.0
   currentHum = random(400, 900) / 10.0;    // 40.0 - 90.0
   currentRain = random(0, 2);              // 0 hoặc 1
   lcd.print("Monitoring...");
@@ -36,8 +36,8 @@ void updateTemperature() {
   float delta = (random(-50, 51)) / 100.0;  // -0.5 đến 0.5
   currentTemp += delta;
   // Giới hạn trong khoảng 15-40 độ C
-  if (currentTemp < 15.0) currentTemp = 15.0;
-  if (currentTemp > 40.0) currentTemp = 40.0;
+  if (currentTemp < 29.0) currentTemp = 29.0;
+  if (currentTemp > 45.0) currentTemp = 45.0;
 }
 
 // Hàm cập nhật độ ẩm: dựa trên nhiệt độ và trạng thái mưa
@@ -52,12 +52,12 @@ void updateHumidity() {
     baseHum = random(850, 1000) / 10.0;  // 85.0 - 100.0
   } else {
     // Thêm nhiễu ngẫu nhiên nhỏ ±3%
-    float noise = (random(-30, 31)) / 10.0;
+    float noise = (random(-70, 71)) / 10.0;
     baseHum += noise;
   }
   
   // Giới hạn độ ẩm 20-100%
-  if (baseHum < 20.0) baseHum = 20.0;
+  if (baseHum < 30.0) baseHum = 30.0;
   if (baseHum > 100.0) baseHum = 100.0;
   currentHum = baseHum;
 }
