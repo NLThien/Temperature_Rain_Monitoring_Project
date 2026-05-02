@@ -109,7 +109,7 @@ if __name__ == "__main__":
         time.sleep(1)
     
     # 2. Khởi động Web Server cho giao diện HTML/JS của bạn
-    print("🚀 Giao diện Web đang chạy tại: http://localhost:5000")
+    print("Giao diện Web đang chạy tại: http://localhost:5000")
     try:
         # Tắt debug để tránh việc Flask chạy 2 lần làm lỗi cổng COM
         app.run(host='0.0.0.0', port=5000, debug=False) 

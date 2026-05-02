@@ -25,8 +25,8 @@ void setup() {
   pinMode(RAINPIN, INPUT_PULLUP);
   randomSeed(analogRead(A5));     // Khởi tạo bộ sinh số ngẫu nhiên
   // Khởi tạo giá trị ngẫu nhiên ban đầu trong khoảng thực tế
-  currentTemp = random(180, 430) / 10.0;   // 18.0 - 43.0
-  currentHum = random(400, 900) / 10.0;    // 40.0 - 90.0
+  currentTemp = random(320, 430) / 10.0;   // 18.0 - 43.0
+  currentHum = random(400, 700) / 10.0;    // 40.0 - 70.0
   currentRain = random(0, 2);              // 0 hoặc 1
   lcd.print("Monitoring...");
   delay(2000);
@@ -37,8 +37,8 @@ void updateTemperature() {
   float delta = (random(-50, 51)) / 100.0;  // -0.5 đến 0.5
   currentTemp += delta;
   // Giới hạn trong khoảng 15-40 độ C
-  if (currentTemp < 15.0) currentTemp = 15.0;
-  if (currentTemp > 40.0) currentTemp = 40.0;
+  if (currentTemp < 32.0) currentTemp = 32.0;
+  if (currentTemp > 43.0) currentTemp = 43.0;
 }
 
 // Hàm cập nhật độ ẩm: dựa trên nhiệt độ và trạng thái mưa
@@ -59,7 +59,7 @@ void updateHumidity() {
   
   // Giới hạn độ ẩm 20-100%
   if (baseHum < 20.0) baseHum = 20.0;
-  if (baseHum > 100.0) baseHum = 100.0;
+  if (baseHum > 100.0) baseHum = 90.0;
   currentHum = baseHum;
 }
 
